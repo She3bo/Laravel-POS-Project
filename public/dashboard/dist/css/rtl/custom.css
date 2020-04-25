@@ -1,0 +1,101 @@
+@media (min-width: 768px){
+   margin-right: 250px !important;
+}
+
+
+@media (min-width: 768px)
+body:not(.sidebar-mini-md) .content-wrapper, body:not(.sidebar-mini-md) .main-footer, body:not(.sidebar-mini-md) .main-header {
+    transition: margin-right 0.3s ease-in-out !important;
+    margin-right: 250px !important;
+}
+
+body {
+    text-align: right !important;
+	direction:rtl;
+}
+
+.layout-fixed .main-sidebar {
+	bottom: 0;
+    float: none;
+    height: 100vh;
+    right: 0 !important;
+	left:not !important;
+    position: fixed;
+    top: 0;
+}
+.nav{
+	padding-right:0;
+}
+
+
+@media (min-width: 768px)
+body:not(.sidebar-mini-md) .content-wrapper, body:not(.sidebar-mini-md) .main-footer, body:not(.sidebar-mini-md) .main-header {
+    transition: margin-right 0.3s ease-in-out !important;
+    margin-right: 250px !important;
+}
+
+@media (min-width: 992px)
+.sidebar-mini.sidebar-collapse .content-wrapper, .sidebar-mini.sidebar-collapse .main-footer, .sidebar-mini.sidebar-collapse .main-header {
+    margin-right: 4.6rem !important;
+}
+
+.navbar-nav {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    padding-right: 0;  ///////
+    margin-bottom: 0;
+    list-style: none;
+}
+
+.ml-auto, .mx-auto {
+    margin-right: auto !important;
+}
+
+
+.dropdown-menu-right {
+    right: auto;
+    left: 0;
+}
+
+.sidebar-collapse .main-sidebar, .sidebar-collapse .main-sidebar::before {
+    margin-right: -250px;//////////////
+}
+
+.main-sidebar, .main-sidebar::before {
+  transition: margin-right 0.3s ease-in-out, width 0.3s ease-in-out;/////////////
+  width: 250px;
+}
+
+@media (max-width: 991.98px)
+body:not(.sidebar-mini-md) .content-wrapper, body:not(.sidebar-mini-md) .content-wrapper::before, body:not(.sidebar-mini-md) .main-footer, body:not(.sidebar-mini-md) .main-footer::before, body:not(.sidebar-mini-md) .main-header, body:not(.sidebar-mini-md) .main-header::before {
+    margin-: 0;
+}
+
+@media (min-width: 768px)
+body:not(.sidebar-mini-md) .content-wrapper, body:not(.sidebar-mini-md) .main-footer, body:not(.sidebar-mini-md) .main-header {
+    transition: margin-left 0.3s ease-in-out;
+    margin-left: 250px;
+}
+
+@media (max-width: 991.98px)
+body:not(.sidebar-mini-md) .content-wrapper, body:not(.sidebar-mini-md) .content-wrapper::before, body:not(.sidebar-mini-md) .main-footer, body:not(.sidebar-mini-md) .main-footer::before, body:not(.sidebar-mini-md) .main-header, body:not(.sidebar-mini-md) .main-header::before {
+    margin-right: 0;
+}
+
+@media (min-width: 992px)
+.sidebar-mini.sidebar-collapse .main-sidebar, .sidebar-mini.sidebar-collapse .main-sidebar::before {
+    margin-right: 0;
+    width: 4.6rem;
+}
+
+.user-panel .image {
+    display: inline-block;
+    padding-right: 0.8rem;
+}
+
+.user-panel .info {
+    display: inline-block;
+    padding: 5px 25px 5px 10px;
+}
