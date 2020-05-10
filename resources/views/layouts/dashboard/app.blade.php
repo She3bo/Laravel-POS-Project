@@ -16,13 +16,18 @@
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
   @if(app()->getLocale() == 'ar')
     <!-- Theme style -->
-    <link rel="stylesheet" href="{{ asset('dashboard/dist/css/rtl/adminlte.css') }}">
+    <link rel="stylesheet" href="{{ asset('dashboard/dist/css/admin_rtl.css') }}">
   @else
     <!-- Theme style -->
-    <link rel="stylesheet" href="{{ asset('dashboard/dist/css/ltr/adminlte.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('dashboard/dist/css/admin_ltr.css') }}">
   @endif
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+
+  <link rel="stylesheet" href="{{ asset('dashboard/plugins/noty/lib/noty.css') }}">
+
+  <script src="{{ asset('dashboard/plugins/noty/lib/noty.js') }}"></script>
+
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
     <!-- wrapper -->
@@ -45,7 +50,7 @@
             <!-- SEARCH FORM -->
             <form class="form-inline ml-3">
                 <div class="input-group input-group-sm">
-                    <input class="form-control form-control-navbar" type="search" placeholder="البحث" aria-label="Search">
+                    <input class="form-control form-control-navbar" type="search" placeholder="@lang('dashboard.search')" aria-label="Search">
                     <div class="input-group-append">
                         <button class="btn btn-navbar" type="submit">
                             <i class="fas fa-search"></i>
@@ -179,16 +184,16 @@
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
                             with font-awesome or any other icon font library -->
-                        <li class="nav-item has-treeview menu-open">
-                                <a href="#" class="nav-link active">
+                        <li class="nav-item">
+                                <a href="{{route('dashboard.index')}}" class="nav-link">
                                     <i class="nav-icon fas fa-tachometer-alt"></i>
                                     <p>@lang('dashboard.dashboard')</p>
                                 </a>
                         </li>
                         <li class="nav-item">
-                                <a href="#" class="nav-link">
+                                <a href="{{route('dashboard.users.index')}}" class="nav-link">
                                     <i class="nav-icon fas fa-th"></i>
-                                    <p>@lang('dashboard.category')</p>
+                                    <p>@lang('dashboard.users')</p>
                                 </a>
                         </li>
                         <li class="nav-item">
@@ -205,8 +210,15 @@
         </aside><!-- /.Main Sidebar Container -->
 
         <!-- Content Wrapper. Contains page content -->
+        
         <div class="content-wrapper">
-            @yield('content')
+            <section class="content pt-3">
+                <div class="container-fluid">
+                    @include("partial.errors")
+                    @include("partial.session")
+                    @yield('content')
+                </div>
+            </section>
         </div><!-- /.content-wrapper -->
     </div><!-- ./wrapper -->
 
@@ -219,6 +231,8 @@
 
     <!-- overlayScrollbars -->
     <script src="{{ asset('dashboard/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js') }}"></script>
+
+     @yield('scripts')
 
     <!-- AdminLTE App -->
     <script src="{{ asset('dashboard/dist/js/adminlte.js') }}"></script>
